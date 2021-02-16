@@ -91,7 +91,11 @@ public class DealershipTest {
         dealership.buyCar(car3);
         assertEquals(3, dealership.getStockCount());
         assertEquals(2000.00, dealership.getTillAmount(), 0.01);
+    }
 
-
+    @Test
+    public void canAddDamageToCar(){
+        car1.damageAdded(ConditionLevel.COSMETICALLYDAMAGED);
+        assertEquals(ConditionLevel.COSMETICALLYDAMAGED, car1.getCondition());
     }
 }

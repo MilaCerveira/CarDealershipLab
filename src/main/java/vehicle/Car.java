@@ -2,6 +2,8 @@ package vehicle;
 
 import components.*;
 
+import java.util.concurrent.locks.Condition;
+
 
 public class Car {
     private Engine engine;
@@ -28,5 +30,13 @@ public class Car {
 
     public double getPrice() {
         return this.price;
+    }
+
+    public ConditionLevel getCondition() {
+        return this.conditionLevel;
+    }
+
+    public void damageAdded(ConditionLevel conditionLevel){
+        this.conditionLevel = conditionLevel;
     }
 }
