@@ -1,11 +1,13 @@
 package components;
 
-public class Tyre {
+public class Tyres {
 
     private int size;
+    private int amount;
 
-    public Tyre(int size){
+    public Tyres(int size){
         this.size = size;
+        this.amount = 4;
     }
 
     public int getSize() {

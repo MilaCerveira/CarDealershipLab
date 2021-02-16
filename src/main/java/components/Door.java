@@ -4,8 +4,10 @@ public class Door {
 
     private boolean isLocked;
     private boolean isClosed;
+    private int amount;
 
-    public Door(){
+    public Door(int amount){
+        this.amount = amount;
         this.isLocked = false;
         this.isClosed = true;
     }
@@ -24,5 +26,9 @@ public class Door {
 
     public void closeDoor(){
         this.isClosed = true;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 }
