@@ -34,4 +34,9 @@ public class Dealership {
         customer.buyCar(car);
         this.till += car.getPrice();
     }
+
+    public void buyCar(Car car) {
+        this.carStock.add(car);
+        this.till -= car.getPrice();
+    }
 }

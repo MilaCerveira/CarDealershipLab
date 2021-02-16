@@ -13,6 +13,7 @@ public class DealershipTest {
     Dealership dealership;
     Car car1;
     Car car2;
+    Car car3;
     Customer customer;
     Engine engine;
     Engine engine2;
@@ -30,6 +31,7 @@ public class DealershipTest {
         tyres = new Tyres(23);
         car1 = new Car(engine, seats, doors, tyres, VehicleType.PETROL, ConditionLevel.BRANDNEW, 25000.00);
         car2 = new Car(engine2, seats, doors, tyres, VehicleType.PETROL, ConditionLevel.BRANDNEW, 17000.00);
+        car3 = new Car(engine2, seats, doors, tyres, VehicleType.PETROL, ConditionLevel.BRANDNEW, 18000.00);
 
         customer = new Customer("Mila", 30000.00);
 
@@ -82,6 +84,14 @@ public class DealershipTest {
         assertEquals(45000.00, dealership.getTillAmount(), 0.01);
         assertEquals(1, customer.getCarCount());
         assertEquals(5000.00, customer.getWallet(), 0.01);
+    }
+
+    @Test
+    public void dealershipCanBuyVehicle(){
+        dealership.buyCar(car3);
+        assertEquals(3, dealership.getStockCount());
+        assertEquals(2000.00, dealership.getTillAmount(), 0.01);
+
 
     }
 }
