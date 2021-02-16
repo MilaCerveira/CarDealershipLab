@@ -1,18 +1,18 @@
 package components;
 
 public enum ConditionLevel {
-    BRANDNEW(100),
-    USED(50),
-    COSMETICALLYDAMAGED(75),
-    EXTREMELYDAMAGED(25);
+    BRANDNEW(0),
+    USED(0),
+    COSMETICALLYDAMAGED(500),
+    EXTREMELYDAMAGED(2000);
 
-    private final int pricePercentage;
+    private final int damageCost;
 
-    ConditionLevel(int pricePercentage){
-        this.pricePercentage = pricePercentage;
+    ConditionLevel(int damageCost){
+        this.damageCost = damageCost;
     }
 
-    public int getPercentage(){
-        return this.pricePercentage;
+    public int getDamageCost(){
+        return this.damageCost;
     }
 }

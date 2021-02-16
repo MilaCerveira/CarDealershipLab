@@ -1,5 +1,6 @@
 package dealership;
 
+import components.ConditionLevel;
 import people.Customer;
 import vehicle.Car;
 
@@ -38,5 +39,13 @@ public class Dealership {
     public void buyCar(Car car) {
         this.carStock.add(car);
         this.till -= car.getPrice();
+    }
+
+    public void repair(Car car) {
+        int priceToAdd = car.getCondition().getDamageCost();
+        car.setConditionLevel(ConditionLevel.USED);
+        this.till -= priceToAdd;
+        car.setPriceAfterRepair(priceToAdd);
+
     }
 }
