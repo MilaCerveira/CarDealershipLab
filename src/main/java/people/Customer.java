@@ -10,9 +10,26 @@ public class Customer {
     private double wallet;
     private ArrayList<Car> ownedCars;
 
-    public Customer(String name, double wallet, ArrayList<Car> ownedCars){
+    public Customer(String name, double wallet){
         this.name = name;
         this.wallet = wallet;
-        this.ownedCars = ownedCars;
+        this.ownedCars = new ArrayList<Car>();
+    }
+
+    public int getCarCount() {
+        return this.ownedCars.size();
+    }
+
+    public void addCarToCollection(Car car) {
+        this.ownedCars.add(car);
+    }
+
+    public double getWallet() {
+        return wallet;
+    }
+
+    public void buyCar(Car car) {
+        this.addCarToCollection(car);
+        this.wallet -= car.getPrice();
     }
 }

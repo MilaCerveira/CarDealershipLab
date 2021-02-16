@@ -12,8 +12,6 @@ public class CarTest {
     Seat seats;
     Door doors;
     Tyres tyres;
-//    VehicleType type;
-//    ConditionLevel conditionLevel;
 
 
     @Before
@@ -22,7 +20,7 @@ public class CarTest {
         seats = new Seat("Leather", 4);
         doors = new Door(4);
         tyres = new Tyres(23);
-        car = new Car(engine, seats, doors, tyres, VehicleType.PETROL, ConditionLevel.BRANDNEW);
+        car = new Car(engine, seats, doors, tyres, VehicleType.PETROL, ConditionLevel.BRANDNEW, 25000.00);
     }
 
     @Test
