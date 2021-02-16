@@ -98,4 +98,11 @@ public class DealershipTest {
         car1.damageAdded(ConditionLevel.COSMETICALLYDAMAGED);
         assertEquals(ConditionLevel.COSMETICALLYDAMAGED, car1.getCondition());
     }
+
+    @Test
+    public void damageHasACost(){
+        car1.damageAdded(ConditionLevel.COSMETICALLYDAMAGED);
+        assertEquals(ConditionLevel.COSMETICALLYDAMAGED, car1.getCondition());
+        assertEquals(18750.00, car1.getPrice(), 0.01);
+    }
 }

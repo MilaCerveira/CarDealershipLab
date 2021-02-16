@@ -38,5 +38,10 @@ public class Car {
 
     public void damageAdded(ConditionLevel conditionLevel){
         this.conditionLevel = conditionLevel;
+        this.price = this.price * conditionLevel.getPercentage() / 100;
+
+
     }
+
+
 }
