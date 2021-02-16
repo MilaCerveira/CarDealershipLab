@@ -1,5 +1,6 @@
 package dealership;
 
+import people.Customer;
 import vehicle.Car;
 
 import java.util.ArrayList;
@@ -14,5 +15,23 @@ public class Dealership {
         this.name = name;
         this.carStock = carStock;
         this.till = till;
+    }
+
+    public int getStockCount() {
+        return this.carStock.size();
+    }
+
+    public void removeCar(Car car) {
+        this.carStock.remove(car);
+    }
+
+    public double getTillAmount() {
+        return this.till;
+    }
+
+    public void sellCar(Customer customer, Car car) {
+        removeCar(car);
+        customer.buyCar(car);
+        this.till += car.getPrice();
     }
 }

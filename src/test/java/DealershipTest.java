@@ -68,4 +68,20 @@ public class DealershipTest {
         assertEquals(1, customer.getCarCount());
         assertEquals(5000.00, customer.getWallet(), 0.01);
     }
+
+    @Test
+    public void canRemoveCar(){
+        dealership.removeCar(car1);
+        assertEquals(1, dealership.getStockCount());
+    }
+
+    @Test
+    public void canSellVehicle(){
+        dealership.sellCar(customer, car1);
+        assertEquals(1, dealership.getStockCount());
+        assertEquals(45000.00, dealership.getTillAmount(), 0.01);
+        assertEquals(1, customer.getCarCount());
+        assertEquals(5000.00, customer.getWallet(), 0.01);
+
+    }
 }
